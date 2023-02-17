@@ -6,7 +6,7 @@ app.secret_key ="heelo"
 @app.route("/")
 def home():
 
-    return render_template("login")
+    return render_template("index.html")
 
 @app.route("/login",methods=["POST","GET"])
 
@@ -18,7 +18,7 @@ def login():
       else:
           if "user" in session:
               return redirect(url_for("user"))
-          return render_template("login.html")
+      return render_template("login.html")
 @app.route("/user")
 def user():
     if "user" in session:
